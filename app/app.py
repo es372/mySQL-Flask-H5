@@ -24,7 +24,12 @@ def index():
     result = cursor.fetchall()
     return render_template('index.html', user=user, trees=result)
 
-
+@app.route('/view/tree.Index', methods = ['GET'])
+def view_tree_index():
+    cursor = mysql.get_db().cursor()
+    cursor.execute('SELECT * FROM treesTable')
+    result = cursor.fetchall()
+    return render_template('view.html', tree=result[0])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
