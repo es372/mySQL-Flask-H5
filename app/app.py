@@ -48,7 +48,7 @@ def save_tree_edit(tree_value):
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('value'), request.form.get('Girth_in'), request.form.get('Height_ft'),
                  request.form.get('Volume_ft'), tree_value)
-    sql_update_query = """UPDATE treesTable t SET t.value = %s, t.Girth_in = %s, t.Height_ft = %s, t.Volume_ft = %s"""
+    sql_update_query = "UPDATE treesTable t SET t.value = %s, t.Girth_in = %s, t.Height_ft = %s, t.Volume_ft = %s"
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
