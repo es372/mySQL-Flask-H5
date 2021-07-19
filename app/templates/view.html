@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>View Form</title>
-</head>
-<body>
-  <h1>Hello this Works!</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card" class="m-5 p-2">
+    <h5 class="card-title">Tree {{ tree.Index }}</h5>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ tree.Girth_in }}</li>
+        <li class="list-group-item">{{ tree.Height_ft }}</li>
+        <li class="list-group-item">{{ tree.Volume_ft }}</li>
+    </ul>
+    <div class="card-body">
+        <a href="/edit/{{tree.Index}}" class="card-link btn btn-primary">Edit</a>
+    </div>
+</div>
+<form action="/delete/{{tree.Index}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
+
+
+{% endblock %}

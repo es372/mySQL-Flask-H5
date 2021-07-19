@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/edit/{{tree.index}}" method="post">
+    <div class="row">
+        <div class="col">
+            <label for="Index" >Tree Index Number</label>
+            <input id="Index" type="text" class="form-control" placeholder="Tree #?" name="Index" value="{{tree.Index}}">
+        </div>
+        <div class="col">
+            <label for="Girth_in">Tree Girth(in)</label>
+            <input id="Girth_in" type="text" class="form-control" placeholder="Thickness"
+                   name="Girth_in" value="{{tree.Girth_in}}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label for="Height_ft">Tree Height(ft)</label>
+            <input id="Height_ft" type="text" class="form-control" placeholder="Tree Height" name="Height_ft" value="{{tree.Height_ft}}">
+        </div>
+        <div class="col">
+            <label for="Volume_ft">Tree Volume(ft^3)</label>
+            <input id="Volume_ft" type="text" class="form-control" placeholder="Tree Volume" name="Volume_ft" value="{{tree.Volume_ft}}">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+
+</form>
+{% endblock %}
