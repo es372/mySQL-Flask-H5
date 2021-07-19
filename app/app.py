@@ -1,8 +1,8 @@
 import simplejson as json
 from flask import Flask, request, Response, redirect
-from flask import render_template
 from flaskext.mysql import MySQL
 from pymysql.cursors import DictCursor
+from flask import render_template
 
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ mysql.init_app(app)
 
 @app.route('/', methods = ['GET'])
 def index():
-    user = {'username': 'Trees Homework5'}
+    user = {'Trees Homework5'}
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM treesTable')
     result = cursor.fetchall()
