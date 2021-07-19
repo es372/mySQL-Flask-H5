@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
 
+
 <div class="card" class="m-5 p-2">
-    <h5 class="card-title">Tree {{ tree.Index }}</h5>
+    <h5 class="card-title">Tree {{ tree.value }}</h5>
 
     <ul class="list-group list-group-flush">
         <li class="list-group-item">{{ tree.Girth_in }}</li>
@@ -10,10 +11,10 @@
         <li class="list-group-item">{{ tree.Volume_ft }}</li>
     </ul>
     <div class="card-body">
-        <a href="/edit/{{tree.Index}}" class="card-link btn btn-primary">Edit</a>
+        <a href="/edit/{{tree.value}}" class="card-link btn btn-primary">Edit</a>
     </div>
 </div>
-<form action="/delete/{{tree.Index}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
+<form action="/delete/{{tree.value}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
 
 
 {% endblock %}

@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/edit/{{tree.index}}" method="post">
+<form action="/edit/{{tree.value}}" method="post">
     <div class="row">
         <div class="col">
-            <label for="Index" >Tree Index Number</label>
-            <input id="Index" type="text" class="form-control" placeholder="Tree #?" name="Index" value="{{tree.Index}}">
+            <label for="value" >Tree Index Number</label>
+            <input id="value" type="text" class="form-control" placeholder="Tree #?" name="value" value="{{tree.value}}">
         </div>
         <div class="col">
             <label for="Girth_in">Tree Girth(in)</label>

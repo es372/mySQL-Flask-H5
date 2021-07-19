@@ -2,7 +2,7 @@ CREATE DATABASE treesData;
 use treesData;
 
 CREATE TABLE IF NOT EXISTS treesTable (
-    `Index` INT,
+    `value` INT,
     `Girth_in` NUMERIC(3, 1),
     `Height_ft` INT,
     `Volume_ft` NUMERIC(3, 1)
