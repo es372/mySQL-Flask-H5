@@ -79,6 +79,16 @@ def api_browse() -> str:
     return resp
 
 
+@app.route('/api/v1/cities/<int:tree_value>', methods=['GET'])
+def api_retrieve(tree_value) -> str:
+    cursor = mysql.get_db().cursor()
+    cursor.execute('SELECT * FROM treesTable WHERE value=%s', tree_value)
+    result = cursor.fetchall()
+    json_result = json.dumps(result);
+    resp = Response(json_result, status=200, mimetype='application/json')
+    return resp
+
+
 @app.route('/trees/new', methods=['GET'])
 def insert_new_tree():
     return render_template('new.html')
@@ -86,9 +96,17 @@ def insert_new_tree():
 @app.route('/trees/new', methods = ['POST'])
 def save_new_tree():
     cursor = mysql.get_db().cursor()
-    sql_insert_query = '''INSERT INTO treesTable (value, Girth_in, Height_ft, Volume_ft) VALUES (%s, %s,%s, %s)'''
-    cursor.execute(sql_insert_query, (request.form.get('value'), request.form.get('Girth_in'), request.form.get('Height_ft'),
+    insert = '''INSERT INTO treesTable (value, Girth_in, Height_ft, Volume_ft) VALUES (%s, %s,%s, %s)'''
+    cursor.execute(insert, (request.form.get('value'), request.form.get('Girth_in'), request.form.get('Height_ft'),
     request.form.get('Volume_ft')))
+    mysql.get_db().commit()
+    return redirect("/", code=302)
+
+@app.route('/delete/<int:tree_value>', methods=['POST'])
+def form_delete_post(tree_value):
+    cursor = mysql.get_db().cursor()
+    sql_delete_query = """DELETE FROM treesTable WHERE value = %s """
+    cursor.execute(sql_delete_query, tree_value)
     mysql.get_db().commit()
     return redirect("/", code=302)
 
