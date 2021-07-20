@@ -44,19 +44,6 @@ def edit_tree_index(tree_value):
         return render_template('edit.html', tree=result[0])
 
 
-''' ####THIS CODE KEEPS GETTING ERRORS#####
-@app.route('/edit/<int:tree_value>', methods=['POST'])
-def save_tree_edit(tree_value):
-    cursor = mysql.get_db().cursor()
-    inputData = (request.form.get('value'), request.form.get('Girth_in'), request.form.get('Height_ft'),
-                 request.form.get('Volume_ft'), tree_value)
-    sql_update_query = "UPDATE treesTable t SET t.value = %s, t.Girth_in = %s, t.Height_ft = %s, t.Volume_ft = %s"
-    cursor.execute(sql_update_query, inputData)
-    mysql.get_db().commit()
-    return redirect("/", code=302)
-'''
-
-
 
 @app.route('/edit/<int:tree_value>', methods=['POST'])
 def save_tree_edit(tree_value):
