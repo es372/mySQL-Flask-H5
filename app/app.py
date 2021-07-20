@@ -115,11 +115,11 @@ def api_edit(tree_value) -> str:
 
 @app.route('/api/v1/trees', methods=['POST'])
 def api_add() -> str:
-    content = request.json
+    #content = request.json
     cursor = mysql.get_db().cursor()
     insert = """INSERT INTO treesTable (value, Girth_in, Height_ft, Volume_ft) VALUES (%s, %s,%s, %s)"""
-    cursor.execute(insert, (content['value'], content['Girth_in'], content['Height_ft'],
-                 content['Volume_ft']))
+    cursor.execute(insert, (request.json['value'], request.json['Girth_in'], request.json['Height_ft'],
+                 request.json['Volume_ft']))
     mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')
     return resp
