@@ -61,15 +61,11 @@ def save_tree_edit(tree_value):
 @app.route('/edit/<int:tree_value>', methods=['POST'])
 def save_tree_edit(tree_value):
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM treesTable WHERE value=%s', tree_value)
-    result = cursor.fetchall()
-    #resp = Response(result, status=200, mimetype='application/json')
-    if request.method == 'POST':
-        result[0] = [request.form.get('value'),  request.form.get('Girth_in'), request.form.get('Height_ft'), request.form.get('Volume_ft'), tree_value]
-        update = ('''UPDATE treesTable t SET value=%s, Girth_in=%s, Height_ft=%s, Volume_ft=%s WHERE value=%s''' % result[0])
-        cursor.execute(update, result[0])
-        mysql.get_db().commit()
-        return redirect("/", code=302)
+    update = '''UPDATE treesTable t SET value=%s, Girth_in=%s, Height_ft=%s, Volume_ft=%s WHERE value=%s'''
+    cursor.execute(update, (request.form.get('value'), request.form.get('Girth_in'), request.form.get('Height_ft'),
+             request.form.get('Volume_ft'), tree_value))
+    mysql.get_db().commit()
+    return redirect("/", code=302)
 
 
 if __name__ == '__main__':
