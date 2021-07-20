@@ -68,5 +68,30 @@ def save_tree_edit(tree_value):
     return redirect("/", code=302)
 
 
+
+@app.route('/api/v1/trees', methods=['GET'])
+def api_browse() -> str:
+    cursor = mysql.get_db().cursor()
+    cursor.execute('SELECT * FROM treesTable')
+    result = cursor.fetchall()
+    json_result = json.dumps(result);
+    resp = Response(json_result, status=200, mimetype='application/json')
+    return resp
+
+
+@app.route('/trees/new', methods=['GET'])
+def insert_new_tree():
+    return render_template('new.html')
+
+@app.route('/trees/new', methods = ['POST'])
+def save_new_tree():
+    cursor = mysql.get_db().cursor()
+    sql_insert_query = '''INSERT INTO treesTable (value, Girth_in, Height_ft, Volume_ft) VALUES (%s, %s,%s, %s)'''
+    cursor.execute(sql_insert_query, (request.form.get('value'), request.form.get('Girth_in'), request.form.get('Height_ft'),
+    request.form.get('Volume_ft')))
+    mysql.get_db().commit()
+    return redirect("/", code=302)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
