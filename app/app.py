@@ -7,14 +7,18 @@ from forms import ContactForm
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'tree'
+app.config.from_pyfile('config.py')
+
+#app.config['SECRET_KEY'] = 'tree'
 mysql = MySQL(cursorclass=DictCursor)
 
-app.config['MYSQL_DATABASE_HOST'] = 'db'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-app.config['MYSQL_DATABASE_PORT'] = 3306
-app.config['MYSQL_DATABASE_DB'] = 'treesData'
+#app.config['MYSQL_DATABASE_HOST'] = 'db'
+#app.config['MYSQL_DATABASE_USER'] = 'root'
+#app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+#app.config['MYSQL_DATABASE_PORT'] = 3306
+#app.config['MYSQL_DATABASE_DB'] = 'treesData'
+
+
 mysql.init_app(app)
 
 def tree_value():
