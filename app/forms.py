@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired, Length, Email
 from flask_wtf.recaptcha import RecaptchaField
 
 
+
 class ContactForm(FlaskForm):
     """Contact form."""
     name = StringField(
