@@ -3,9 +3,11 @@ from flask import Flask, request, Response, redirect
 from flaskext.mysql import MySQL
 from pymysql.cursors import DictCursor
 from flask import render_template
+from forms import ContactForm
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'tree'
 mysql = MySQL(cursorclass=DictCursor)
 
 app.config['MYSQL_DATABASE_HOST'] = 'db'
@@ -134,7 +136,12 @@ def api_delete(tree_value) -> str:
     return resp
 
 
-
+@app.route('/contact', methods = ['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    if form.validate_on_submit():
+        return redirect("/", code=302)
+    return render_template("contact.html", form=form)
 
 
 if __name__ == '__main__':
