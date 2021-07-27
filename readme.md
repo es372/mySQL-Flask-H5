@@ -1,8 +1,7 @@
-#Flask-WTF
+#App Routing
 Added:
-1. html
-2. routing (url)
-3. python (class)
+1. Error Handler for code 404
+2. Error Handler for code 400
 
 
 
