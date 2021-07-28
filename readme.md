@@ -4,7 +4,7 @@ PROPERLY MANAGING TREE DATABASE MODEL WITH FLASK-MYSQL, DOCKER, AND PYTHON
 The tutorial went over how to properly structure and code flask applications with a database model. The project assignment involved
 updating our current applications with the goal of learning correct practices when managing our data application. 
 
-Here are the some of systems/tools that my project uses:
+Here are some of the systems/tools that my project uses:
 - Bootstrap CSS
 - Flask
 - Flask-MySQL
