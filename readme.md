@@ -1,7 +1,6 @@
-#App Routing
+#Flask App Configuration
 Added:
-1. Error Handler for code 404
-2. Error Handler for code 400
+1. configuration file
 
 
 
