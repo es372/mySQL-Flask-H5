@@ -3,7 +3,7 @@ from flask import Flask, request, Response, redirect, make_response
 from flaskext.mysql import MySQL
 from pymysql.cursors import DictCursor
 from flask import render_template
-from app.application.forms import ContactForm
+from app.application.home.forms import ContactForm
 
 
 app = Flask(__name__)
