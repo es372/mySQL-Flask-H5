@@ -22,18 +22,20 @@ that my application uses different systems, here is a general overview on how I 
 
 1. Routing my flask application to handle errors
 2. Configuring my flask app with secret keys for WTForms
-3. Relocating Configuration in seperate file (no inline configuration)
-4. Project restructure for application factory pattern
-5. Initiate Flask in __init__.py
-6. Create application context
-7. Create app's entry point(wsgi.py)
-8. Get rid of app.py and implement single responsiblity principle
-9. Create routes.py for application routing
-10. Add blueprint configuration to routes.py
-11. create global variable of mysql for cursor in __init__.py (Database functionality)
-12. Implemt Flask structure with home blueprint
-13. Register Home Blueprint in __init__.py
-14. Fix Jinja2 routing with Home Blueprint
+3. Create contact form in tree application
+4. Relocating Configuration in seperate file (no inline configuration)
+5. Project restructure for application factory pattern
+6. Initiate Flask in __init__.py
+7. Create application context
+8. Create app's entry point(wsgi.py)
+9. Get rid of app.py and implement single responsiblity principle
+10. Create routes.py for application routing
+11. Add blueprint configuration to routes.py
+12. create global variable of mysql for cursor in __init__.py (Database functionality)
+13. Implemt Flask structure with home blueprint
+14. Register Home Blueprint in __init__.py
+15. Fix Jinja2 routing with Home Blueprint
+16. Test application functionality using Docker (no errors)
 
 After reading the tutorial, I realized my current application may work, however, it was no where near the quality a Flask application
 needs to be. Thus, I learned a lot about the best methods to manage a flask application with a database. 
