@@ -6,3 +6,4 @@ mysql-connector
 Flask-WTF
 simplejson
 email-validator
+Flask-Assets
