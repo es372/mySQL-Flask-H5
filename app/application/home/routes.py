@@ -6,6 +6,7 @@ from flask import Blueprint
 from application import mysql
 
 
+
 home_bp = Blueprint(
     'home_bp', __name__,
     template_folder='templates'

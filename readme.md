@@ -47,28 +47,28 @@ needs to be. Thus, I learned a lot about the best methods to manage a flask appl
 
 Here are Screenshots of the steps I have completed:
 
-Step 1:
+Step 1: 
 ![screenshot](screenshots/step1.png)
 
-Step 2:
+Step 2: 
 ![screenshot](screenshots/step2.png)
 
-Step 3:
+Step 3: 
 ![screenshot](screenshots/step3.png)
 
-Step 4:
+Step 4: 
 ![screenshot](screenshots/step4.png)
 
-Step 5:
+Step 5: 
 ![screenshot](screenshots/step5.png)
 
-Step 6:
+Step 6: 
 ![screenshot](screenshots/step6.png)
 
-Step 7: 
+Step 7:  
 ![screenshot](screenshots/step7.png)
 
-Step 8:
+Step 8: 
 ![screenshot](screenshots/step8.png)
 
 
